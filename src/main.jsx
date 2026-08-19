@@ -19,7 +19,7 @@ import {
 import "./styles.css";
 
 const images = import.meta.glob(
-  "./images/*.{png,jpg,jpeg,webp}",
+  "/images/*.{png,jpg,jpeg,webp}",
   {
     eager: true,
     query: "?url",
