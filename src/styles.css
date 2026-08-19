@@ -35,8 +35,9 @@ a { color: inherit; text-decoration: none; }
 .section { padding: 125px 0; }
 
 .nav-wrap {
-  position: sticky; top: 0; z-index: 20;
-  background: color-mix(in srgb, var(--bg) 84%, transparent);
+  position: fixed; top: 0; z-index: 1000;
+  width: 100%;
+  background: color-mix(in srgb, var(--bg) 75%, transparent);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
 }

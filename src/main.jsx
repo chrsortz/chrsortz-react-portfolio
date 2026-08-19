@@ -82,8 +82,10 @@ function App() {
       <header className="nav-wrap">
         <nav className="nav container">
           <button className="brand" onClick={() => go("home")} aria-label="Go home">
-            <span className="brand-mark"><img src={images["./images/pfp.jpg"]} alt="profilepic"></img></span>
-          </button>
+          <span className="brand-logo">
+            chrsortz<span>.dev</span>
+          </span>
+        </button>
 
           <div className={`nav-links ${menuOpen ? "open" : ""}`}>
             {["about", "skills", "experience", "contact"].map((item) => (
