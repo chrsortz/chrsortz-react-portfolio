@@ -18,6 +18,15 @@ import {
 } from "lucide-react";
 import "./styles.css";
 
+const assets = import.meta.glob(
+  "./assets/*.{pdf, docx}",
+  {
+    eager: true,
+    query: "?url",
+    import: "default",
+  }
+);
+
 const images = import.meta.glob(
   "./images/*.{png,jpg,jpeg,webp}",
   {
@@ -26,6 +35,14 @@ const images = import.meta.glob(
     import: "default",
   }
 );
+
+const favicon = images["./images/profile.png"];
+
+const faviconLink = document.createElement("link");
+faviconLink.rel = "icon";
+faviconLink.type = "image/png";
+faviconLink.href = favicon;
+document.head.appendChild(faviconLink);
 
 const skills = [
   "C#", "ASP.NET MVC", "Blazor", "SQL Server", "HTML", "CSS", "JavaScript",
@@ -121,9 +138,17 @@ function App() {
               <button className="primary-btn" onClick={() => go("experience")}>
                 View my work experience <ArrowUpRight size={17} />
               </button>
+              <a
+                className="primary-btn"
+                href={assets["./assets/Ortiz_Resume.pdf"]}             
+                download="Ortiz_Resume.pdf"
+              >
+                Download my resume <Download size={17} />
+              </a>
+              <br></br>
               <button className="secondary-btn" onClick={() => go("contact")}>
                 Get in touch <Mail size={17} />
-              </button>
+              </button>            
             </div>
             <div className="mini-stats">
               <div><strong>QA</strong><span>Testing</span></div>
