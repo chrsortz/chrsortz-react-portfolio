@@ -46,7 +46,7 @@ document.head.appendChild(faviconLink);
 
 const skills = [
   "C#", "ASP.NET MVC", "Blazor", "SQL Server", "HTML", "CSS", "JavaScript",
-  "Postman", "Selenium", "Playwright", "REST API", "Git", "GitHub", "Agile", "SDLC"
+  "Postman", "Selenium", "Playwright", "Git", "GitHub", "Agile", "SDLC"
 ];
 
 const projects = [
