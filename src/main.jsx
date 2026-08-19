@@ -18,6 +18,15 @@ import {
 } from "lucide-react";
 import "./styles.css";
 
+const images = import.meta.glob(
+  "./images/*.{png,jpg,jpeg,webp}",
+  {
+    eager: true,
+    query: "?url",
+    import: "default",
+  }
+);
+
 const skills = [
   "C#", "ASP.NET MVC", "Blazor", "SQL Server", "HTML", "CSS", "JavaScript",
   "Postman", "Selenium", "Playwright", "REST API", "Git", "GitHub", "Agile", "SDLC"
@@ -57,6 +66,7 @@ function App() {
   const [dark, setDark] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeProject, setActiveProject] = useState(null);
+  
 
   useEffect(() => {
     document.documentElement.dataset.theme = dark ? "dark" : "light";
@@ -72,7 +82,7 @@ function App() {
       <header className="nav-wrap">
         <nav className="nav container">
           <button className="brand" onClick={() => go("home")} aria-label="Go home">
-            <span className="brand-mark"><img src="./images/pfp.jpg" alt="profilepic"></img></span>
+            <span className="brand-mark"><img src={images["/images/pfp.jpg"]} alt="profilepic"></img></span>
           </button>
 
           <div className={`nav-links ${menuOpen ? "open" : ""}`}>
@@ -124,7 +134,7 @@ function App() {
 
 
   <div className="hero-card-overlay"></div>
-    <img className="hero-profile-image" src="./images/profile.png" alt="Christian" />
+    <img className="hero-profile-image" src={images["/images/profile.png"]} alt="Christian" />
   </div>
         </section>
 
