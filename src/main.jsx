@@ -125,15 +125,14 @@ function App() {
 
       <main>
         <section id="home" className="hero section container">
-          <div className="hero-copy reveal">
+          <div className="hero-copy">
             <div className="eyebrow"><span className="status-dot" /> Available for opportunities</div>
             <h1>
-               Christian Ortiz
+               Christian Dave Ortiz
             </h1>
-            <p className="hero-text">
-              QA Tester & Associate Developer focused on reliable web applications,
-              thoughtful testing, and clean solutions.
-            </p>
+            <p className="hero-text"> QA Tester & Associate Developer building and validating reliable web applications with a strong focus on quality, problem-solving, and real-world user experience. </p>
+            <p className="hero-subtext"> I combine hands-on software testing with development experience in C#, .NET, ASP.NET MVC, SQL Server, and modern testing tools to understand problems from both the user's and developer's perspective. </p>
+            
             <div className="hero-actions">
               <button className="primary-btn" onClick={() => go("experience")}>
                 View my work experience <ArrowUpRight size={17} />
@@ -157,12 +156,7 @@ function App() {
             </div>
           </div>
 
-          <div className="hero-card reveal delay">
-
-
-  <div className="hero-card-overlay"></div>
-    <img className="hero-profile-image" src={images["./images/profile.png"]} alt="Christian" />
-  </div>
+          
         </section>
 
         <section id="about" className="section container">
