@@ -703,7 +703,6 @@ function App() {
 
       <footer className="footer container">
         <span>© 2026 - made by chrsortz.dev </span>
-        <span>QA Tester · Associate Developer</span>
         <button onClick={() => go("home")}>Back to top ↑</button>
       </footer>
 
