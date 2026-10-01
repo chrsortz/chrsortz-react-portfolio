@@ -369,12 +369,8 @@ function App() {
               I build and validate reliable web
               applications with a strong focus on
               quality, problem-solving, and
-              real-world user experience.
-            </p>
-
-
-            <p className="hero-subtext">
-              Combining hands-on QA testing with
+              real-world user experience. Combining 
+              hands-on QA testing with
               development experience in C#, .NET,
               ASP.NET MVC, SQL Server, and modern
               testing tools.
@@ -396,10 +392,10 @@ function App() {
                 className="secondary-btn"
                 href={
                   assets[
-                  "./assets/Ortiz_Resume.pdf"
+                  "./assets/Christian_Dave_Ortiz_Resume.pdf"
                   ]
                 }
-                download="Ortiz_Resume.pdf"
+                download="Christian_Dave_Ortiz_Resume.pdf"
               >
                 Download Resume
                 <Download size={17} />
@@ -411,45 +407,8 @@ function App() {
                 onClick={() => go("contact")}
               >
                 Get in touch
-                <Mail size={16} />
+                <Mail size={17} />
               </button>
-
-            </div>
-
-
-            <div className="hero-badges">
-
-              <div className="hero-badge">
-                <span className="hero-badge-label">
-                  QA
-                </span>
-
-                <span className="hero-badge-value">
-                  Testing
-                </span>
-              </div>
-
-
-              <div className="hero-badge">
-                <span className="hero-badge-label">
-                  API
-                </span>
-
-                <span className="hero-badge-value">
-                  Postman
-                </span>
-              </div>
-
-
-              <div className="hero-badge">
-                <span className="hero-badge-label">
-                  DEV
-                </span>
-
-                <span className="hero-badge-value">
-                  C# / .NET
-                </span>
-              </div>
 
             </div>
 
