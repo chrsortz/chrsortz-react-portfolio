@@ -18,6 +18,33 @@ import {
 } from "lucide-react";
 import "./styles.css";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import {
+  faCode,
+  faPalette,
+  faLaptopCode,
+  faDatabase,
+  faFlask,
+  faCheckCircle,
+  faRotate,
+  faNetworkWired,
+  faWrench,
+  faCodeBranch,
+  faGears,
+} from "@fortawesome/free-solid-svg-icons";
+
+import {
+  faHtml5,
+  faCss3Alt,
+  faJs,
+  faReact,
+  faGitAlt,
+  faGithub,
+  faMicrosoft,
+  faGitlab,
+} from "@fortawesome/free-brands-svg-icons";
+
 const assets = import.meta.glob(
   "./assets/*.{pdf, docx}",
   {
@@ -44,9 +71,122 @@ faviconLink.type = "image/png";
 faviconLink.href = favicon;
 document.head.appendChild(faviconLink);
 
-const skills = [
-  "C#", "ASP.NET MVC", "Blazor", "SQL Server", "HTML", "CSS", "JavaScript",
-  "Postman", "Selenium", "Playwright", "Git", "GitHub", "Agile", "SDLC"
+const skillGroups = [
+  {
+    title: "Frontend",
+    description: "Building responsive and interactive web interfaces.",
+    skills: [
+      {
+        name: "HTML5",
+        icon: <FontAwesomeIcon icon={faHtml5} />,
+      },
+      {
+        name: "CSS3",
+        icon: <FontAwesomeIcon icon={faCss3Alt} />,
+      },
+      {
+        name: "JavaScript",
+        icon: <FontAwesomeIcon icon={faJs} />,
+      },
+      {
+        name: "React",
+        icon: <FontAwesomeIcon icon={faReact} />,
+      },
+      {
+        name: "Blazor",
+        icon: <FontAwesomeIcon icon={faCode} />,
+      },
+    ],
+  },
+
+  {
+    title: "Backend",
+    description: "Developing web applications, APIs, and application logic.",
+    skills: [
+      {
+        name: "C#",
+        icon: <FontAwesomeIcon icon={faCode} />,
+      },
+      {
+        name: ".NET",
+        icon: <FontAwesomeIcon icon={faMicrosoft} />,
+      },
+      {
+        name: "ASP.NET MVC",
+        icon: <FontAwesomeIcon icon={faLaptopCode} />,
+      },
+      {
+        name: "SQL Server",
+        icon: <FontAwesomeIcon icon={faDatabase} />,
+      },
+      {
+        name: "REST API",
+        icon: <FontAwesomeIcon icon={faNetworkWired} />,
+      },
+    ],
+  },
+
+  {
+    title: "QA & Testing",
+    description: "Testing functionality, APIs, and application behavior.",
+    skills: [
+      {
+        name: "Manual Testing",
+        icon: <FontAwesomeIcon icon={faFlask} />,
+      },
+      {
+        name: "Functional Testing",
+        icon: <FontAwesomeIcon icon={faCheckCircle} />,
+      },
+      {
+        name: "Regression Testing",
+        icon: <FontAwesomeIcon icon={faRotate} />,
+      },
+      {
+        name: "API Testing",
+        icon: <FontAwesomeIcon icon={faNetworkWired} />,
+      },
+      {
+        name: "Postman",
+        icon: <FontAwesomeIcon icon={faFlask} />,
+      },
+      {
+        name: "Selenium",
+        icon: <FontAwesomeIcon icon={faCheckCircle} />,
+      },
+      {
+        name: "Playwright",
+        icon: <FontAwesomeIcon icon={faLaptopCode} />,
+      },
+    ],
+  },
+
+  {
+    title: "Tools",
+    description: "Tools used for development, collaboration, and delivery.",
+    skills: [
+      {
+        name: "Git",
+        icon: <FontAwesomeIcon icon={faGitAlt} />,
+      },
+      {
+        name: "GitHub",
+        icon: <FontAwesomeIcon icon={faGithub} />,
+      },
+      {
+        name: "Azure DevOps",
+        icon: <FontAwesomeIcon icon={faMicrosoft} />,
+      },
+      {
+        name: "Visual Studio",
+        icon: <FontAwesomeIcon icon={faMicrosoft} />,
+      },
+      {
+        name: "Agile / Scrum",
+        icon: <FontAwesomeIcon icon={faGears} />,
+      },
+    ],
+  },
 ];
 
 const projects = [
@@ -78,6 +218,8 @@ const projects = [
     featured: false,
   },
 ];
+
+
 
 function App() {
   const [dark, setDark] = useState(true);
@@ -181,28 +323,67 @@ function App() {
         </section>
 
         <section id="skills" className="section container">
-          <div className="section-heading">
-            <span className="section-number">02</span>
-            <div>
-              <p className="kicker">Toolkit</p>
-              <h2>Things I work with.</h2>
-            </div>
+  <div className="section-heading">
+    <span className="section-number">02</span>
+
+    <div>
+      <p className="kicker">Toolkit</p>
+      <h2>Things I work with.</h2>
+    </div>
+  </div>
+
+  <div className="skills-intro">
+    <div className="skill-icon">
+      <Code2 size={26} />
+    </div>
+
+    <div>
+      <h3>
+        Development knowledge,
+        <br />
+        <span>QA-first mindset.</span>
+      </h3>
+
+      <p>
+        I work across development and quality assurance, allowing me to
+        understand applications from both the user's and developer's
+        perspective.
+      </p>
+    </div>
+  </div>
+
+  <div className="skill-groups">
+    {skillGroups.map((group) => (
+      <div className="skill-group" key={group.title}>
+
+        <div className="skill-group-header">
+          <div>
+            <span className="skill-group-label">
+              {group.title}
+            </span>
+
+            <p>{group.description}</p>
           </div>
 
-          <div className="skill-layout">
-            <div className="skill-intro">
-              <div className="skill-icon"><Code2 size={26} /></div>
-              <h3>Full-stack awareness,<br />QA-first mindset.</h3>
-              <p>
-                Understanding how an application is built helps me test it
-                from both the user's and developer's perspective.
-              </p>
+          <ArrowUpRight size={20} />
+        </div>
+
+        <div className="skill-items">
+          {group.skills.map((skill) => (
+            <div className="skill-card" key={skill.name}>
+              <div className="skill-logo">
+                {skill.icon}
+              </div>
+
+              <span>{skill.name}</span>
             </div>
-            <div className="skill-cloud">
-              {skills.map((skill, i) => <span key={skill} style={{ "--i": i }}>{skill}</span>)}
-            </div>
-          </div>
-        </section>
+          ))}
+        </div>
+
+      </div>
+    ))}
+  </div>
+</section>
 
         <section id="experience" className="section container">
   <div className="section-heading">
@@ -230,7 +411,7 @@ function App() {
             <span className="kicker">Thurston Software Solutions, Inc.</span>
 
             <h3>
-              Associate Developer
+              Junior Developer
             </h3>
           </div>
 
